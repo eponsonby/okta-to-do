@@ -10,19 +10,28 @@ import {
   Menu,
   MenuItem,
   ListItemText,
-  Link,
 } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 
 export default withOktaAuth(
   class LoginMenu extends Component {
+    constructor(props) {
+      super(props);
+      this.login = this.login.bind(this);
+      this.logout = this.logout.bind(this);
+    }
     state = {
       menuAnchorEl: null,
     };
 
-    logout = () => {
+    async login() {
+      this.props.authService.login("/");
+    }
+
+    async logout() {
+      this.props.authService.logout("/");
       this.handleMenuClose();
-    };
+    }
 
     handleMenuOpen = (event) =>
       this.setState({ menuAnchorEl: event.currentTarget });
@@ -34,9 +43,9 @@ export default withOktaAuth(
       if (this.props.authState.isPending) return null;
       if (!this.props.authState.isAuthenticated)
         return (
-          <Link href="/login" color="inherit">
+          <Button onClick={this.login} color="inherit">
             Login
-          </Link>
+          </Button>
         );
 
       const menuPosition = {

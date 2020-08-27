@@ -52,17 +52,16 @@ class TasksManager extends Component {
     try {
       const response = await fetch(`${API}${endpoint}`, {
         method,
-        body: body && JSON.stringify(body),
         headers: {
-          "content-type": "application/json",
-          accept: "application/json",
-          authorization: `Bearer ${await this.props.auth.getAccessToken()}`,
+          //   "Content-Type": "application/json",
+          //   accept: "application/json",
+          Authorization: "Bearer " + this.props.authState.accessToken,
         },
+        body: body && JSON.stringify(body),
       });
       return await response.json();
     } catch (error) {
       console.error(error);
-
       this.setState({ error });
     }
   }
