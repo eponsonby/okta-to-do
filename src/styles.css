@@ -1,0 +1,23 @@
+/* #okta-sign-in.auth-container.main-container {
+  background-color: red;
+}
+
+#okta-sign-in .beacon-blank {
+  background-color: red;
+} */
+
+#okta-sign-in.auth-container .o-form-head {
+  color: #3747ac;
+}
+
+#okta-sign-in.auth-container .button-primary {
+  background: #3747ac;
+}
+
+#okta-sign-in.auth-container .button-primary:hover {
+  background: #3750ac;
+}
+
+#okta-sign-in.auth-container .button-primary:active {
+  background: #3750ac;
+}
