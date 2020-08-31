@@ -1,8 +1,6 @@
 //new from https://developer.okta.com/code/react/okta_react_sign-in_widget/
 
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import OktaSignInWidget from "./OktaSignInWidget";
 import { withOktaAuth } from "@okta/okta-react";
 import {
   Button,
@@ -20,6 +18,7 @@ export default withOktaAuth(
       this.login = this.login.bind(this);
       this.logout = this.logout.bind(this);
     }
+    npm;
     state = {
       menuAnchorEl: null,
     };

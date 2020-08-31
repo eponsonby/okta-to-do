@@ -53,8 +53,8 @@ class TasksManager extends Component {
       const response = await fetch(`${API}${endpoint}`, {
         method,
         headers: {
-          //   "Content-Type": "application/json",
-          //   accept: "application/json",
+          // "Content-Type": "application/json",
+          // accept: "application/json",
           Authorization: "Bearer " + this.props.authState.accessToken,
         },
         body: body && JSON.stringify(body),

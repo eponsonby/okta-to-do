@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import * as OktaSignIn from "@okta/okta-signin-widget";
-import "../styles.css";
 import config from "./config";
 import image from "../assets/check-mark.png";
 
