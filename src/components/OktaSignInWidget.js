@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import * as OktaSignIn from "@okta/okta-signin-widget";
 import config from "./config";
 import image from "../assets/check-mark.png";
+import "../styles.css";
 
 const OktaSignInWidget = () => {
   useEffect(() => {
