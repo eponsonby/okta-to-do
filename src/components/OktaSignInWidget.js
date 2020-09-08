@@ -44,6 +44,8 @@ const OktaSignInWidget = () => {
         throw err;
       }
     );
+
+    return () => widget.remove();
   }, []);
 
   return (

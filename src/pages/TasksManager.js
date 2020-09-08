@@ -10,7 +10,6 @@ import {
   ListItem,
   ListItemText,
   ListItemSecondaryAction,
-  Button,
 } from "@material-ui/core";
 import Fab from "@material-ui/core/Fab";
 import { Delete as DeleteIcon, Add as AddIcon } from "@material-ui/icons";
