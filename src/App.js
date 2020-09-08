@@ -14,9 +14,11 @@ const styles = (theme) => ({
 
 const App = ({ classes }) => (
   <div>
-    <Router>
-      <AppWithRouterAccess />
-    </Router>
+    <main className={classes.main}>
+      <Router>
+        <AppWithRouterAccess />
+      </Router>
+    </main>
   </div>
 );
 

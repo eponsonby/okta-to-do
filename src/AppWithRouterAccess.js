@@ -16,7 +16,6 @@ export default withRouter(
     }
 
     onAuthRequired() {
-      console.log("poop", this.props);
       this.props.history.push("/login");
     }
 
@@ -28,7 +27,7 @@ export default withRouter(
           <SecureRoute path="/" exact component={Home} />
           <Route path="/implicit/callback" component={LoginCallback} />
           <Route path="/login" exact component={OktaSignInWidget} />
-          <SecureRoute path="/tasks" exact component={TasksManager} />
+          <SecureRoute path="/tasks" component={TasksManager} />
         </Security>
       );
     }

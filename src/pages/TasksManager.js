@@ -4,14 +4,15 @@ import { withRouter, Route, Redirect, Link } from "react-router-dom";
 import {
   withStyles,
   Typography,
-  Fab,
   IconButton,
   Paper,
   List,
   ListItem,
   ListItemText,
   ListItemSecondaryAction,
+  Button,
 } from "@material-ui/core";
+import Fab from "@material-ui/core/Fab";
 import { Delete as DeleteIcon, Add as AddIcon } from "@material-ui/icons";
 import moment from "moment";
 import { find, orderBy } from "lodash";
@@ -53,8 +54,8 @@ class TasksManager extends Component {
       const response = await fetch(`${API}${endpoint}`, {
         method,
         headers: {
-          // "Content-Type": "application/json",
-          // accept: "application/json",
+          "Content-Type": "application/json",
+          accept: "application/json",
           Authorization: "Bearer " + this.props.authState.accessToken,
         },
         body: body && JSON.stringify(body),
@@ -96,17 +97,14 @@ class TasksManager extends Component {
       params: { id },
     },
   }) => {
-    if (this.state.loading) return null;
+    if (!this.state || this.state.loading) return null;
     const task = find(this.state.tasks, { id: Number(id) });
-
     if (!task && id !== "new") return <Redirect to="/tasks" />;
-
     return <TaskEditor task={task} onSave={this.saveTask} />;
   };
 
   render() {
     const { classes } = this.props;
-
     return (
       <Fragment>
         <Typography variant="h4">To do</Typography>
